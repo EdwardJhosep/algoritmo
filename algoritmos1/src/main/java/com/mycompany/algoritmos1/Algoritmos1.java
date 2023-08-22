@@ -67,6 +67,17 @@ public class Algoritmos1 {
             JOptionPane.showMessageDialog(null, "Persona no encontrada en el historial.");
             return;//devolver mensage
         }
+        //dividitr la informacion 
+        String[] infoParts = personaInfo.split(",");
+        //extraer cada componente
+        String nerviosismo = infoParts[0];
+        String historia = infoParts[1];
+        String lenguajeNoVerbal = infoParts[2];
+        String coherencia = infoParts[3];
+//realizar analisis
+        String decision = detetcline(nerviosismo, historia, lenguajeNoVerbal, coherencia);
+//mostar cuadro 
+        JOptionPane.showMessageDialog(null, "Resultado para " + nombre + ":\n" + decision);
     }
     
 }
