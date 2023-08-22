@@ -19,6 +19,13 @@ public class Algoritmos1 {
         boolean exit = false;
 
         while (!exit) {
+            //creacion de un menu 
+             String menuChoice = JOptionPane.showInputDialog(
+                "Menú:\n" +
+                "1. Agregar persona\n" +
+                "2. Detectar si una persona miente\n" +
+                "3. Salir\n\n" +
+                "Seleccione una opción:");
     }
 }
 }
