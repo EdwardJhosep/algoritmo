@@ -55,5 +55,18 @@ public class Algoritmos1 {
         String coherencia = JOptionPane.showInputDialog("¿" + nombre + " mantiene coherencia en su historia? (Sí/No)");
    
     }
-     
+         //Función para agregar funcion detectarMentira
+    private static void detectarMentira(Map<String, String> personas) {
+        //solicitar nombre
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre de la persona para consultar su historial:");
+        //obtener 
+        String personaInfo = personas.get(nombre);
+//condicion negativa  del  nombre verificar
+        if (personaInfo == null) {
+            //mostar
+            JOptionPane.showMessageDialog(null, "Persona no encontrada en el historial.");
+            return;//devolver mensage
+        }
+    }
+    
 }
