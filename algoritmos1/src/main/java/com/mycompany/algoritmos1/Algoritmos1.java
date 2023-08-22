@@ -28,14 +28,14 @@ public class Algoritmos1 {
                 "Seleccione una opción:");
              //creacion del switch -manejo de opciones
              
-              switch (menuChoice) {,
+              switch (menuChoice) {
                 case "1":
                     //agregar
-                    addPersona(personas),
+                    addPersona(personas);
                     break;
                 case "2":
                     //detectar
-                    detectarMentira(personas),
+                    detectarMentira(personas);
                     break;
                 case "3":
                     //salir
@@ -46,5 +46,14 @@ public class Algoritmos1 {
             }
     }
 }
+    //Función para agregar información
+     private static void addPersona(Map<String, String> personas) {
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre de la persona:");
+        String nerviosismo = JOptionPane.showInputDialog("¿" + nombre + " está nervioso/a? (Sí/No)");
+        String historia = JOptionPane.showInputDialog("¿" + nombre + " tiene una historia creíble? (Sí/No)");
+        String lenguajeNoVerbal = JOptionPane.showInputDialog("¿" + nombre + " presenta lenguaje no verbal sospechoso? (Sí/No)");
+        String coherencia = JOptionPane.showInputDialog("¿" + nombre + " mantiene coherencia en su historia? (Sí/No)");
+   
+    }
+     
 }
-
