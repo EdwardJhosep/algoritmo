@@ -75,9 +75,33 @@ public class Algoritmos1 {
         String lenguajeNoVerbal = infoParts[2];
         String coherencia = infoParts[3];
 //realizar analisis
-        String decision = detetcline(nerviosismo, historia, lenguajeNoVerbal, coherencia);
+        String decision = detectLie(nerviosismo, historia, lenguajeNoVerbal, coherencia);
 //mostar cuadro 
         JOptionPane.showMessageDialog(null, "Resultado para " + nombre + ":\n" + decision);
     }
+    //creacion de metodo detectLie
+    private static String detectLie(String nerviosismo, String historia, String lenguajeNoVerbal, String coherencia) {
+        Map<String, Integer> nerviosismoCounts = new HashMap<>();
+            //creacion de metodo // Definir los mapas de conteo
+        nerviosismoCounts.put("Sí", 4);
+        nerviosismoCounts.put("No", 3);
+//creacion de metodo // Definir los mapas de conteo
+        Map<String, Integer> historiaCounts = new HashMap<>();
+        historiaCounts.put("Sí", 5);
+        historiaCounts.put("No", 4);
+//creacion de metodo // Definir los mapas de conteo
+        Map<String, Integer> lenguajeNoVerbalCounts = new HashMap<>();
+        lenguajeNoVerbalCounts.put("Sí", 5);
+        lenguajeNoVerbalCounts.put("No", 4);
+//creacion de metodo // Definir los mapas de conteo
+        Map<String, Integer> coherenciaCounts = new HashMap<>();
+        coherenciaCounts.put("Sí", 0);
+        coherenciaCounts.put("No", 0);
+        
+    }
+    
+    
+
+
     
 }
