@@ -97,6 +97,20 @@ public class Algoritmos1 {
         Map<String, Integer> coherenciaCounts = new HashMap<>();
         coherenciaCounts.put("Sí", 0);
         coherenciaCounts.put("No", 0);
+        //calcular la antropia del nodo padre 
+        double parentEntropy = calculateEntropy(5, 10);
+// Calcular la entropía para diferentes atributos
+        double nerviosismoEntropy = calculateEntropy(4, 7);
+        double historiaEntropy = calculateEntropy(5, 10);
+        double lenguajeNoVerbalEntropy = calculateEntropy(5, 9);
+        double coherenciaEntropy = calculateEntropy(5, 8);
+// Calcular la ganancia de información
+        double nerviosismoGain = calculateInformationGain(parentEntropy, nerviosismoCounts, 10);
+        double historiaGain = calculateInformationGain(parentEntropy, historiaCounts, 10);
+        double lenguajeNoVerbalGain = calculateInformationGain(parentEntropy, lenguajeNoVerbalCounts, 10);
+        double coherenciaGain = calculateInformationGain(parentEntropy, coherenciaCounts, 10);
+        
+
         
     }
     
