@@ -124,9 +124,16 @@ public class Algoritmos1 {
         }
         
     }
-    
-    
-
-
-    
+    private static double calculateEntropy(int positiveCount, int total) {
+          // Calcula la proporción de casos positivos
+        double pPositive = (double) positiveCount / total;
+        double pNegative = 1 - pPositive;
+// Verifica si alguna proporción es cero
+        if (pPositive == 0 || pNegative == 0) {
+            return 0;
+        }
+// Calcula la entropía utilizando la fórmula de la entropía
+        return -pPositive * log2(pPositive) - pNegative * log2(pNegative);
+    }
 }
+
