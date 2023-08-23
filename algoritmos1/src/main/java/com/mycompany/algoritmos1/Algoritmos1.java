@@ -135,5 +135,9 @@ public class Algoritmos1 {
 // Calcula la entropía utilizando la fórmula de la entropía
         return -pPositive * log2(pPositive) - pNegative * log2(pNegative);
     }
+    // Función para calcular el logaritmo en base 2 de un valor
+    private static double log2(double value) {
+        return Math.log(value) / Math.log(2);
+    }
 }
 
