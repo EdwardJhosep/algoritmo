@@ -53,7 +53,8 @@ public class Algoritmos1 {
         String historia = JOptionPane.showInputDialog("¿" + nombre + " tiene una historia creíble? (Sí/No)");
         String lenguajeNoVerbal = JOptionPane.showInputDialog("¿" + nombre + " presenta lenguaje no verbal sospechoso? (Sí/No)");
         String coherencia = JOptionPane.showInputDialog("¿" + nombre + " mantiene coherencia en su historia? (Sí/No)");
-   
+        personas.put(nombre, nerviosismo + "," + historia + "," + lenguajeNoVerbal + "," + coherencia);
+        JOptionPane.showMessageDialog(null, "Persona agregada correctamente.");
     }
          //Función para agregar funcion detectarMentira
     private static void detectarMentira(Map<String, String> personas) {
@@ -138,6 +139,15 @@ public class Algoritmos1 {
     // Función para calcular el logaritmo en base 2 de un valor
     private static double log2(double value) {
         return Math.log(value) / Math.log(2);
+    }
+    
+    private static double calculateInformationGain(double parentEntropy, Map<String, Integer> attributeCounts, int totalSamples) {
+        double weightedEntropy = 0;
+        for (int count : attributeCounts.values()) {
+            double p = (double) count / totalSamples;
+            weightedEntropy += p * calculateEntropy(count, totalSamples);
+        }
+        return parentEntropy - weightedEntropy;
     }
 }
 
