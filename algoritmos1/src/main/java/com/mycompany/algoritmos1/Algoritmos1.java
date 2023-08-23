@@ -140,13 +140,17 @@ public class Algoritmos1 {
     private static double log2(double value) {
         return Math.log(value) / Math.log(2);
     }
+
+    // Función para calcular la ganancia de información
     
     private static double calculateInformationGain(double parentEntropy, Map<String, Integer> attributeCounts, int totalSamples) {
+       // Inicializar la variable para almacenar 
         double weightedEntropy = 0;
         for (int count : attributeCounts.values()) {
             double p = (double) count / totalSamples;
             weightedEntropy += p * calculateEntropy(count, totalSamples);
         }
+         // Calcular la ganancia de información restando la entropía ponderada
         return parentEntropy - weightedEntropy;
     }
 }
