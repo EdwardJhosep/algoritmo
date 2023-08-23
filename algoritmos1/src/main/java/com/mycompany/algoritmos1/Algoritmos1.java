@@ -109,8 +109,19 @@ public class Algoritmos1 {
         double historiaGain = calculateInformationGain(parentEntropy, historiaCounts, 10);
         double lenguajeNoVerbalGain = calculateInformationGain(parentEntropy, lenguajeNoVerbalCounts, 10);
         double coherenciaGain = calculateInformationGain(parentEntropy, coherenciaCounts, 10);
-        
+        // Comprobar cuál atributo tiene la mayor ganancia de información 
 
+
+        //implementacion de condiciones 
+        if (nerviosismoGain > historiaGain && nerviosismoGain > lenguajeNoVerbalGain && nerviosismoGain > coherenciaGain) {
+            return "Es probable que  " + nerviosismo.toLowerCase() + " esté mintiendo (Nerviosismo)";
+        } else if (historiaGain > nerviosismoGain && historiaGain > lenguajeNoVerbalGain && historiaGain > coherenciaGain) {
+            return "Es probable que " + historia.toLowerCase() + " esté mintiendo (Historia)";
+        } else if (lenguajeNoVerbalGain > nerviosismoGain && lenguajeNoVerbalGain > historiaGain && lenguajeNoVerbalGain > coherenciaGain) {
+            return "Es probable que " + lenguajeNoVerbal.toLowerCase() + " esté mintiendo (Lenguaje No Verbal)";
+        } else {
+            return "Es probable que " + coherencia.toLowerCase() + " esté mintiendo (Coherencia)";
+        }
         
     }
     
